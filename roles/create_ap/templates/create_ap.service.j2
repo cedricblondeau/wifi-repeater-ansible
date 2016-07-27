@@ -1,0 +1,13 @@
+[Unit]
+Description=WiFi repeater
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/create_ap {{ wifi_interface }} {{ interface_with_internet }} {{ access_point_name }} {{ access_point_passphrase }}
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

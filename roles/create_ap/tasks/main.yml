@@ -1,0 +1,9 @@
+---
+- name: Check if create_ap is installed
+  stat: path=/usr/bin/create_ap
+  register: create_ap
+
+- include: install.yml
+  when: create_ap.stat.exists == False
+
+- include: service.yml

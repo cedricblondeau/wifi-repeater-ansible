@@ -1,0 +1,8 @@
+---
+- name: Copy service file
+  become: yes
+  template: src=create_ap.service.j2 dest=/lib/systemd/system/create_ap.service
+
+- name: Ensure service is started
+  become: yes
+  service: name=create_ap state=started
