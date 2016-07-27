@@ -1,0 +1,6 @@
+---
+- name: Set up a WiFi repeater using create_ap
+  hosts: repeater
+  roles:
+    - common
+    - create_ap
