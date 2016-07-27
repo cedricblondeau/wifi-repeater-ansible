@@ -1,0 +1,8 @@
+[repeater]
+192.168.33.10 ansible_port=2222 ansible_user=ubuntu
+
+[repeater:vars]
+wifi_interface=wlp2s0
+interface_with_internet=wlp2s0
+access_point_name=Fsociety
+access_point_passphrase=YouMustChangeThis1234!
