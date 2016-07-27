@@ -6,13 +6,13 @@ A simple and straightforward playbook to set up a WiFi repeater service using cr
 
 ### Configure
 
-First, create a inventory/config file (let's name it laptop):
+First, create and edit an inventory/config file (let's name it laptop for example):
 
 ```bash
 cp inventories/sample inventories/laptop
 ```
 
-#### Example: Execute playbook on a remote target using the same WiFi adapter
+Example for executing playbook on a remote target using the same WiFi adapter:
 
 ```
 [repeater]
@@ -23,11 +23,11 @@ wifi_interface=wlp2s0
 interface_with_internet=wlp2s0
 access_point_name=Fsociety
 access_point_passphrase=YouMustChangeThis1234!
-``
+```
 
 ### Run
 
-```
+```bash
 ansible-playbook -i inventories/laptop playbook.yml --ask-become-pass -vvvv
 ```
 
